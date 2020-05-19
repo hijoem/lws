@@ -15,6 +15,15 @@ class CreateRTSTable extends Migration
     {
         Schema::create('r_t_s', function (Blueprint $table) {
             $table->id();
+            $table->string('user_id');
+            $table->text('name')->nullable();
+            $table->text('url_ktp')->nullable();
+            $table->text('url_sk')->nullable();
+            $table->string('lang')->nullable();
+            $table->string('lat')->nullable();
+            $table->text('url_img')->nullable();
+            $table->text('detail')->nullable();
+            $table->boolean('is_active')->nullable();
             $table->timestamps();
         });
     }

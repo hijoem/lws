@@ -1,0 +1,10 @@
+$ composer install
+
+$ php artisan migrate:refresh --seed      //reset database
+
+$ php artisan passport:install --force    //wajib setiap abis reset db
+
+buka app/Http/Controllers/UserController.php
+cari fungsi getTokenAndRefreshToken, ada link/url, sesuaikan dengan environment masing2.
+
+done. Api siap tes pakai Postman
