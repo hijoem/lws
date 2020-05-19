@@ -8,3 +8,10 @@ buka app/Http/Controllers/UserController.php
 cari fungsi getTokenAndRefreshToken, ada link/url, sesuaikan dengan environment masing2.
 
 done. Api siap tes pakai Postman
+
+
+
+
+
+referensi:
+https://dev.to/azibom/create-api-rest-with-laravel-7-x-passport-authentication-and-implement-refresh-token-part-1-43ja
