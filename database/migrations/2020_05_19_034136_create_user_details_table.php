@@ -15,7 +15,9 @@ class CreateUserDetailsTable extends Migration
     {
         Schema::create('user_details', function (Blueprint $table) {
             $table->id();
-            $table->string('user_id');
+            $table->integer('user_id');
+            $table->string('name')->nullable();
+            $table->string('url_img')->nullable();
             $table->string('no_hp')->unique()->nullable();
             $table->boolean('no_hp_confirmed')->nullable();
             $table->text('status')->nullable();

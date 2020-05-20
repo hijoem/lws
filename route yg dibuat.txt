@@ -1,0 +1,9 @@
+
+tanda * berarti wajib
+
+
+==================================================================================
+APP_URL/api/register        POST    -> header: none && body: name *email *password *c_password
+APP_URL/api/login           POST    -> header: none && body: *email *password
+APP_URL/api/details         POST    -> header: Accept "application/json" & Authorization "Bearer $access_token" && body: none
+APP_URL/api/refreshtoken    POST    -> header: Refreshtoken "$refresh_token" && body: none

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\UserDetail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $user = Auth::user();
+        $details = UserDetail::where('user_id', $user->id)->first();
+        return view('home', ['details' => $details]);
     }
 }

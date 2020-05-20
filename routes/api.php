@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/* --- Route User ---  */
 Route::post('login', 'UserController@login');
 Route::post('register', 'UserController@register');
 Route::post('refreshtoken', 'UserController@refreshToken');
@@ -21,7 +22,13 @@ Route::get('/unauthorized', 'UserController@unauthorized');
 Route::group(['middleware' => ['CheckClientCredentials','auth:api']], function() {
     Route::post('logout', 'UserController@logout');
     Route::post('details', 'UserController@details');
+    Route::post('upload/profile', 'UserController@upload');
+    Route::post('update/password', 'UserController@updatePassword');
+    Route::post('update/details', 'UserController@updateDetails');
 });
+
+
+
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
