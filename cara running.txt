@@ -1,7 +1,7 @@
+buat database dan masukkan ke file .env
+
 $ composer install
-
 $ php artisan migrate:refresh --seed      //reset database
-
 $ php artisan passport:install --force    //wajib setiap abis reset db
 
 buka app/Http/Controllers/UserController.php
@@ -9,9 +9,18 @@ cari fungsi getTokenAndRefreshToken, ada link/url, sesuaikan dengan environment 
 
 done. Api siap tes pakai Postman
 
+login default:
+admin@gmail.com
+password
 
 
 
 
 referensi:
 https://dev.to/azibom/create-api-rest-with-laravel-7-x-passport-authentication-and-implement-refresh-token-part-1-43ja
+
+
+
+postman api-key
+PMAK-5ec52f0f6496010034de4c8c-fda18509635f7c24637653de08fc8a1906
+https://054ef50b-cd53-41a9-8ff9-fd29fe70eb48.mock.pstmn.io
