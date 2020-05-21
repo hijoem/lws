@@ -11,7 +11,7 @@ done. Api siap tes pakai Postman
 
 login default:
 admin@gmail.com
-password
+123456
 
 
 
