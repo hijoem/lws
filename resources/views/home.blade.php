@@ -24,7 +24,9 @@
         <div class="container">
             <h2 class="text-center my-5">Ganti Foto Profil</h2>
             <div class="col-lg-8 mx-auto my-5">
-                <img style="max-width: 100%; max-height: 300px;" src="{{ $_ENV['APP_URL'] . $details->url_img }}">
+                @if (!is_null($details))
+                <img style="max-width: 100%; max-height: 300px;" src="{{ $details->url_img }}">
+                @endif
                 @if(count($errors) > 0)
                 <div class="alert alert-danger">
                     @foreach ($errors->all() as $error)

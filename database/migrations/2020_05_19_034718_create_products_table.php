@@ -15,8 +15,7 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('user_id');
-            $table->string('shop_id');
+            $table->integer('shop_id');
             $table->string('url_img1')->nullable();
             $table->string('url_img2')->nullable();
             $table->string('url_img3')->nullable();
@@ -25,8 +24,9 @@ class CreateProductsTable extends Migration
             $table->string('price')->nullable();
             $table->string('quantity')->nullable();
             $table->string('discount')->nullable();
-            $table->boolean('is_published')->nullable();
-            $table->boolean('is_active')->nullable();
+            $table->integer('product_category')->nullable();
+            $table->boolean('is_published')->default(true);
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }

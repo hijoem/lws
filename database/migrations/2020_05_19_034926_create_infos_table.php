@@ -23,8 +23,8 @@ class CreateInfosTable extends Migration
             $table->text('url_img3')->nullable();
             $table->text('name')->nullable();
             $table->text('detail')->nullable();
-            $table->boolean('is_published')->nullable();
-            $table->boolean('is_active')->nullable();
+            $table->boolean('is_published')->default(true);
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }

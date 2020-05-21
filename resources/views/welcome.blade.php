@@ -9,6 +9,9 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/78999de7d0.js" crossorigin="anonymous"></script>
+
         <!-- Styles -->
         <style>
             html, body {
@@ -81,7 +84,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                  <i class="fas fa-sign-in-alt"></i>  Laravel
                 </div>
 
                 <div class="links">

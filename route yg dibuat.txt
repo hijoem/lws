@@ -1,9 +1,36 @@
 
 tanda * berarti wajib
+postman body: form-data
+img = file jpg/jpeg/png max 2MB
 
-
-==================================================================================
+========================= User ==================================================
 APP_URL/api/register        POST    -> header: none && body: name *email *password *c_password
 APP_URL/api/login           POST    -> header: none && body: *email *password
-APP_URL/api/details         POST    -> header: Accept "application/json" & Authorization "Bearer $access_token" && body: none
 APP_URL/api/refreshtoken    POST    -> header: Refreshtoken "$refresh_token" && body: none
+APP_URL/api/details         GET     -> header: Accept "application/json" & Authorization "Bearer $access_token" && body: none
+APP_URL/api/details         POST    -> header: Accept "application/json" & Authorization "Bearer $access_token" && body: name, no_hp, status, address, birthday
+APP_URL/api/update/password POST    -> header: Accept "application/json" & Authorization "Bearer $access_token" && body: *password *c_password
+APP_URL/api/upload/profile  POST    -> header: Accept "application/json" & Authorization "Bearer $access_token" && body: *img
+APP_URL/upload/profile      POST    -> header: Accept "application/json" & Authorization "Bearer $access_token" && body: *img
+APP_URL/api/upload/ktp      POST    -> header: Accept "application/json" & Authorization "Bearer $access_token" && body: *img
+APP_URL/upload/ktp          POST    -> header: Accept "application/json" & Authorization "Bearer $access_token" && body: *img
+
+=========================== Shop ==============================================
+APP_URL/api/shop            POST    -> header: Accept "application/json" & Authorization "Bearer $access_token" && body: none
+APP_URL/api/shop/create     POST    -> header: Accept "application/json" & Authorization "Bearer $access_token" && body: *name, *lang, *lat, detail, status, opr_hour
+APP_URL/api/update/shop     POST    -> header: Accept "application/json" & Authorization "Bearer $access_token" && body: name, detail, lang, lat, status, opr_hour
+APP_URL/api/shop/open       POST    -> header: Accept "application/json" & Authorization "Bearer $access_token" && body: *is_open (1 = true, 0 = false)
+APP_URL/api/upload/shop     POST    -> header: Accept "application/json" & Authorization "Bearer $access_token" && body: *img
+APP_URL/upload/shop         POST    -> header: Accept "application/json" & Authorization "Bearer $access_token" && body: *img
+
+=========================== Product ==============================================
+APP_URL/api/products           GET     -> header: Accept "application/json" & Authorization "Bearer $access_token" && body: none
+APP_URL/api/products           POST    -> header: Accept "application/json" & Authorization "Bearer $access_token" && body: *name, *detail, *price, *product_category, discount, quantity
+APP_URL/api/products/all       POST    -> header: Accept "application/json" & Authorization "Bearer $access_token" && body: none
+APP_URL/api/products/{id?}/publish   POST    -> header: Accept "application/json" & Authorization "Bearer $access_token" && body: *id, *is_published
+APP_URL/api/products/{id?}     POST    -> header: Accept "application/json" & Authorization "Bearer $access_token" && body: name, detail, price, product_category, discount, quantity
+APP_URL/api/products/{id?}     GET     -> header: Accept "application/json" & Authorization "Bearer $access_token" && body: none
+APP_URL/api/products/{id?}     DELETE  -> header: Accept "application/json" & Authorization "Bearer $access_token" && body: none
+APP_URL/api/upload/products1   POST    -> header: Accept "application/json" & Authorization "Bearer $access_token" && body: *id, *img
+APP_URL/api/upload/products2   POST    -> header: Accept "application/json" & Authorization "Bearer $access_token" && body: *id, *img
+APP_URL/api/upload/products3   POST    -> header: Accept "application/json" & Authorization "Bearer $access_token" && body: *id, *img

@@ -15,7 +15,7 @@ class CreateUserDriversTable extends Migration
     {
         Schema::create('user_drivers', function (Blueprint $table) {
             $table->id();
-            $table->string('user_id');
+            $table->integer('user_id')->unique();
             $table->string('url_sim')->nullable();
             $table->string('url_stnk')->nullable();
             $table->string('no_plat')->nullable();

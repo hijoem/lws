@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
 use App\User;
 use App\UserDetail;
+use App\UserDriver;
 use Validator;
 use Exception;
 use GuzzleHttp\Client;
@@ -74,6 +75,7 @@ class UserController extends Controller
 
     public function details(Request $request) {
         $detail = UserDetail::where('user_id', $request->user()->id)->first();
+        $driver = UserDriver::where('user_id', $request->user()->id)->first();
         return response()->json([
             'success' => true,
             "role"=> $request->user()->role,

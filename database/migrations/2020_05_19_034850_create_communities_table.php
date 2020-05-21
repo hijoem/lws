@@ -15,14 +15,13 @@ class CreateCommunitiesTable extends Migration
     {
         Schema::create('communities', function (Blueprint $table) {
             $table->id();
-            $table->string('user_id');
+            $table->integer('user_id');
             $table->text('name')->nullable();
-            $table->text('url_ktp')->nullable();
             $table->string('lang')->nullable();
             $table->string('lat')->nullable();
             $table->text('url_img')->nullable();
             $table->text('detail')->nullable();
-            $table->boolean('is_active')->nullable();
+            $table->boolean('is_active')->->default(true);
             $table->timestamps();
         });
     }
